@@ -34,7 +34,7 @@ body {
 .hero { position: relative; }
 .hero img {
   width: 100%;
-  height: auto; /* prilagodljivo */
+  height: auto;
   display: block;
 }
 .hero::after {
@@ -263,6 +263,8 @@ footer {
   background-color: #ffffff;
   color: #1f218c;
 }
+
+
 @media (max-width: 768px) {
   /* Navigacija */
   .topnav a {
@@ -277,7 +279,7 @@ footer {
     max-width: 100%;
     padding: 20px;
     text-align: center;
-    background: rgba(33, 39, 130, 0.909); /* tamni sloj iza teksta */
+    background: rgba(33, 39, 130, 0.9); /* tamni sloj iza teksta */
   }
   .text-box h1 { font-size: 1.8em; }
   .text-box p { font-size: 1em; }
@@ -292,7 +294,6 @@ footer {
     grid-template-columns: 1fr;
   }
   .promo .promo-text { order: -1; } /* tekst gore, slika dole */
-  /* Ako želiš obrnuto, zameni sa: .promo .promo-image { order: -1; } */
 
   /* About sekcija */
   .about-section img {
@@ -309,12 +310,14 @@ footer {
     width: 100%;
   }
 
-  /* Mapa (ako je imaš) */
+  /* Mapa */
   .map-container iframe {
     width: 100%;
     height: 300px;
   }
 }
+
+/* Validacija poruka */
 #errorMessages {
   color: red;
   margin-top: 10px;
