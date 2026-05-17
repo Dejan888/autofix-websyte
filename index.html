@@ -91,14 +91,15 @@
 </section>
 <section class="contact" id="contact">
   <div class="contact-container">
-    <form class="contact-form"><h2>Kontakt</h2>
+    <form class="contact-form" id="contact-form"><h2>Kontakt</h2>
     <label for="name" >Ime</label>
-    <input type="text" id="name" placeholder="Vase Ime">
+    <input type="text" id="name" name="name" placeholder="Vase Ime" required>
     <label for="email">Email</label>
-    <input type="email" id="Email" placeholder="Email adresa">
+    <input type="email" id="Email" name="email" placeholder="Email adresa" required>
     <label for="message">Poruka</label>
-    <input  type="text" size=100  id="message" placeholder="Unesite vas problem ovde...">
+    <input  type="text" size=100  id="message" name="message" placeholder="Unesite vas problem ovde...">
     <button class="btn">Zakazi termin</button></form>
+    
     <div class="contact-info">
      
       <p>
@@ -108,6 +109,7 @@ Naš tim će obraditi vaš zahtev i kontaktirati vas putem emaila radi potvrde t
       </p>
     </div>
   </div>
+  <div id="errorMessages"></div>
 
 </section>
 

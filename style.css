@@ -14,11 +14,7 @@ body {
   position: sticky;
   z-index: 1000;
 }
-
-.topnav #myLinks {
-  display: none;
-}
-
+.topnav #myLinks { display: none; }
 .topnav a {
   color: white;
   padding: 14px;
@@ -26,21 +22,16 @@ body {
   font-size: 17px;
   display: block;
 }
-
 .topnav a.icon {
   display: block;
   position: absolute;
   right: 0;
   top: 0;
 }
-.topnav a.icon:hover {
-  transform: translate(3px);
-}
+.topnav a.icon:hover { transform: translate(3px); }
 
 /* Hero sekcija */
-.hero {
-  position: relative;
-}
+.hero { position: relative; }
 .hero img {
   width: 100%;
   height: auto; /* prilagodljivo */
@@ -120,14 +111,8 @@ body {
 }
 
 /* Sekcije */
-.active {
-  background-color: #1f218c;
-  color: white;
-}
-#usluge {
-  padding: 80px 60px;
-  background: #ffffff;
-}
+.active { background-color: #1f218c; color: white; }
+#usluge { padding: 80px 60px; background: #ffffff; }
 .promo {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -163,15 +148,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-.about-section h2 {
-  color: #1f218c;
-  margin-bottom: 15px;
-}
-.about-section p {
-  color: black;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
+.about-section h2 { color: #1f218c; margin-bottom: 15px; }
+.about-section p { color: black; line-height: 1.6; margin-bottom: 25px; }
 .about-section img {
   width: 100%;
   max-width: 600px;
@@ -192,10 +170,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.contact-form label {
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
+.contact-form label { margin: 10px 0 5px; font-weight: bold; }
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -233,9 +208,7 @@ body {
     0 5px 15px rgba(248, 239, 244, 0.4);
   color: #fefefe;
 }
-.contact-form .btn:hover:before {
-  opacity: 1;
-}
+.contact-form .btn:hover:before { opacity: 1; }
 .contact-form .btn:after {
   content: "";
   position: absolute;
@@ -252,9 +225,7 @@ body {
   transform: scale(1.2);
   background: #1f218c;
 }
-.contact-form .btn:active {
-  transform: translateY(-2px);
-}
+.contact-form .btn:active { transform: translateY(-2px); }
 .contact-info {
   font-size: 1.3em;
   display: flex;
@@ -289,28 +260,62 @@ footer {
   transition: 0.3s;
 }
 #topBtn:hover {
-  background-color: #1f218c
+  background-color: #ffffff;
+  color: #1f218c;
 }
 @media (max-width: 768px) {
+  /* Navigacija */
+  .topnav a {
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* Hero sekcija – tekst više ne prelazi sliku */
+  .text-box {
+    position: static;      /* više nije absolute */
+    max-width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: rgba(33, 39, 130, 0.909); /* tamni sloj iza teksta */
+  }
+  .text-box h1 { font-size: 1.8em; }
+  .text-box p { font-size: 1em; }
+  .button {
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  /* Promo sekcije – jedna kolona */
   .promo {
-    grid-template-columns: 1fr; /* sve u jednu kolonu */
+    grid-template-columns: 1fr;
+  }
+  .promo .promo-text { order: -1; } /* tekst gore, slika dole */
+  /* Ako želiš obrnuto, zameni sa: .promo .promo-image { order: -1; } */
+
+  /* About sekcija */
+  .about-section img {
+    max-width: 100%;
   }
 
-  /* Ako želiš da na mobilnom slika ide prva */
-  .promo.reverse .promo-image {
-    order: -1; /* slika ide gore */
+  /* Kontakt sekcija – jedna kolona */
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
   }
 
-  /* Ako želiš da na mobilnom tekst ide prvi */
-  .promo.reverse .promo-text {
-    order: -1; /* tekst ide gore */
+  /* Mapa (ako je imaš) */
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
   }
-
-  /* Hero tekst manji na mobilnom */
-  .text-box h1 {
-    font-size: 2em;
-  }
-  .text-box p {
-    font-size: 1em;
-  }
+}
+#errorMessages {
+  color: red;
+  margin-top: 10px;
 }
