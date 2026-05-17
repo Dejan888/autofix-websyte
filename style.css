@@ -291,3 +291,26 @@ footer {
 #topBtn:hover {
   background-color: #1f218c
 }
+@media (max-width: 768px) {
+  .promo {
+    grid-template-columns: 1fr; /* sve u jednu kolonu */
+  }
+
+  /* Ako želiš da na mobilnom slika ide prva */
+  .promo.reverse .promo-image {
+    order: -1; /* slika ide gore */
+  }
+
+  /* Ako želiš da na mobilnom tekst ide prvi */
+  .promo.reverse .promo-text {
+    order: -1; /* tekst ide gore */
+  }
+
+  /* Hero tekst manji na mobilnom */
+  .text-box h1 {
+    font-size: 2em;
+  }
+  .text-box p {
+    font-size: 1em;
+  }
+}
