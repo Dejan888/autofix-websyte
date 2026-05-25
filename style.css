@@ -251,7 +251,7 @@ nav a:hover::after {
       rgba(0,0,0,0.75),
       rgba(0,0,0,0.8)
     ),
-    url('images/spare_parts_94417_image_640w_360h.png')
+    url('spare_parts_94417_image_640w_360h.png')
     center/cover no-repeat;
 }
 
