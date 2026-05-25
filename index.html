@@ -1,129 +1,545 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="sr">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AutoFix NS</title>
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- </head>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AutoFix NS</title>
+
+  <meta
+    name="description"
+    content="Auto servis u Novom Sadu - mali servis, veliki servis, dijagnostika i održavanje vozila."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  >
+
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- DODAJ U <head> -->
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  />
+</head>
+<!-- DODAJ PRE </body> -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 <body>
-  <div class="mobile-container">
+   <!-- DODAJ ODMAH ISPOD <body> -->
 
-<!-- Top Navigation Menu -->
-<div class="topnav">
-  <a href="#home" class="active">AutoFix NS</a>
-  <div id="myLinks">
-    <a href="#usluge">Usluge</a>
-    <a href="#about-section">O nama</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
-      <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
-    </svg>
-  </a>
+<div id="loader">
+  <div class="loader-circle"></div>
 </div>
+  <!-- Scroll to top -->
+  <button onclick="topFunction()" id="topBtn" title="Nazad na vrh">
+    ⬆
+  </button>
 
+  <!-- Call button -->
+  <button onclick="showPhone()" id="callBtn">
+    📞
+  </button>
 
-<div class="hero">
-  <img src="spare_parts_94417_image_640w_360h.png" alt="auto servis">
-  <div class="text-box">
-  <h1>AutoFix NS</h1>
-  <p>Pouzdan auto servis koji pruža brzu i kvalitetnu uslugu održavanja i popravke vozila. Naš tim stručnih majstora koristi savremenu dijagnostiku i originalne delove kako bi tvoje vozilo bilo bezbedno i spremno za vožnju. Nudimo redovan servis, zamenu ulja i filtera, popravke motora, kočnica i elektrike – sve na jednom mestu.</p>
-  <h2><a href="#contact">Zakazi termin</a></h2>
-  </div>
-</div>
-
-
-<!-- Sekcija usluge -->
-<section id="usluge">
-  <div class="promo">
-  <!-- Prvi blok: tekst levo, slika desno -->
-    <div class="promo-text">
-      <h2>Servis</h2>
-      <p>Naš auto servis pruža kompletnu brigu o vašem vozilu kroz redovne i specijalizovane usluge. <strong>Mali servis</strong> obuhvata zamenu ulja i filtera, kao i osnovnu kontrolu vozila, čime se obezbeđuje pouzdan rad motora i sigurnost u vožnji. Zamena ulja se radi sa pažljivo odabranim kvalitetnim uljima i filterima, kako bi motor imao optimalno podmazivanje i dug vek trajanja.
-      </p>
-      <p>Za dugoročnu sigurnost tu je <strong>veliki servis</strong>, koji uključuje zamenu zupčastog kaiša ili lanca, rolera, španera, pumpe za vodu i svih pratećih delova – ključna intervencija koja sprečava ozbiljne kvarove motora. Pored toga, nudimo i punjenje i servis <strong>klima uređaja</strong>, dopunu gasa, proveru sistema i dezinfekciju, kako bi vožnja bila prijatna i bezbedna tokom cele godine.</p>
-      
-    </div>
-    <div class="promo-image">
-      <img src="1.png" alt="Servis vozila">
-    </div>
+  <div id="phoneBox">
+    <p>
+      Telefon:
+      <a href="tel:0646545689">064 654 56 89</a>
+    </p>
   </div>
 
-  <!-- Drugi blok: slika levo, tekst desno -->
-  <div class="promo reverse">
-    <div class="promo-image">
-      <img src="2.png" alt="Odrzavanje vozila">
-    </div>
-    <div class="promo-text">
-      <h2>Odrzavanje</h2>
-      <p>Posebnu pažnju posvećujemo <strong>održavanju motora</strong>, kroz redovnu dijagnostiku, kontrolu performansi i zamenu istrošenih delova.</p>
+  <!-- HEADER -->
+  <header id="header">
 
-      <p>Naš tim stručnjaka brine i o <strong>elektrici vozila</strong> – akumulatoru, alternatoru, rasveti i elektronskim sistemima, obezbeđujući pouzdan rad svih komponenti. Takođe, vršimo detaljnu kontrolu i popravku <strong>kočionog sistema</strong>, uključujući diskove, pločice, kočione cilindre i ABS sisteme, jer je bezbednost u vožnji uvek na prvom mestu.</p>
-      
+    <a href="#" class="logo">AutoFix NS</a>
+
+    <div class="hamburger" id="hamburger" aria-label="Meni">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+
+    <nav id="nav">
+      <a href="#services">Usluge</a>
+      <a href="#about">O nama</a>
+      <a href="#contact">Kontakt</a>
+      <a href="#gallery">Galerija</a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- ULTRA MODERN HERO -->
+<!-- ZAMENI POSTOJECU HERO SEKCIJU OVOM -->
+
+<section class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="floating floating-1"></div>
+  <div class="floating floating-2"></div>
+  <div class="floating floating-3"></div>
+
+  <div class="hero-content" data-aos="fade-up">
+
+    <span class="hero-badge">
+      🚗 Profesionalni auto servis
+    </span>
+
+    <h1>
+      Premium servis za vaše vozilo
+    </h1>
+
+    <p>
+      Brza dijagnostika, profesionalni majstori
+      i garantovan kvalitet usluge.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#contact" class="btn-primary">
+        Zakaži termin
+      </a>
+
+      <a href="tel:0646545689" class="btn-secondary">
+        📞 Pozovi odmah
+      </a>
+
+    </div>
+
   </div>
+
 </section>
 
-<section class="about-section" id="about-section">
-    <h2>O nama</h2>
-    <p>
-      Naš auto servis postoji više od 20 godina i tokom tog vremena izgradili smo reputaciju pouzdanog partnera za sve vozače. Dugogodišnji rad, iskustvo i posvećenost kvalitetu omogućili su nam da pružimo usluge koje garantuju sigurnost i dug vek vašeg vozila.
-    </p>
-    <p>
-    Naš tim stručnih majstora koristi savremenu dijagnostiku i originalne delove, a svaka intervencija se obavlja pažljivo i profesionalno. Bilo da je u pitanju redovan servis, popravka motora, elektrike ili kočionog sistema – kod nas ste uvek u sigurnim rukama.
-    </p>
-    <p>
-    Više od dve decenije poverenja naših klijenata najbolja su potvrda da smo servis na koji se možete osloniti svaki dan.
-    </p>
-  <div>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.123456789!2d19.842!3d43.858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758abcdef12345%3A0x9876543210abcdef!2sAutoFix%20NS!5e0!3m2!1ssr!2srs!4v1681234567890!5m2!1ssr!2srs" 
-      width="100%" 
-      height="400" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+<!-- STATS -->
+<section class="stats">
+
+  <div class="stat-card" data-aos="fade-up">
+    <h2 class="counter" data-target="1500">0</h2>
+    <p>Servisiranih vozila</p>
   </div>
+
+  <div class="stat-card" data-aos="fade-up" data-aos-delay="150">
+    <h2 class="counter" data-target="10">0</h2>
+    <p>Godina iskustva</p>
+  </div>
+
+  <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+    <h2 class="counter" data-target="98">0</h2>
+    <p>Zadovoljnih klijenata</p>
+  </div>
+
 </section>
-<section class="contact" id="contact">
-  <div class="contact-container">
-    <form class="contact-form" id="contact-form"><h2>Kontakt</h2>
-    <label for="name" >Ime</label>
-    <input type="text" id="name" name="name" placeholder="Vase Ime" required>
-    <label for="email">Email</label>
-    <input type="email" id="Email" name="email" placeholder="Email adresa" required>
-    <label for="message">Poruka</label>
-    <input  type="text" size=100  id="message" name="message" placeholder="Unesite vas problem ovde...">
-    <button class="btn">Zakazi termin</button></form>
-    
-    <div class="contact-info">
-     
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+
+  <h2 data-aos="fade-up">
+    Šta kažu naši klijenti
+  </h2>
+
+  <div class="testimonial-container">
+
+    <div class="testimonial-card" data-aos="zoom-in">
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
       <p>
-        Ukoliko želite da zakažete termin ili postavite pitanje, popunite naš kontakt formular. Potrebno je da unesete svoje ime, email adresu i kratak opis problema sa vozilom. Takođe, možete odabrati željeni termin za servis.
-
-Naš tim će obraditi vaš zahtev i kontaktirati vas putem emaila radi potvrde termina i dodatnih informacija. Na ovaj način obezbeđujemo brzu i pouzdanu komunikaciju, kako bi vaše vozilo bilo servisirano u najkraćem roku.
+        "Brza usluga i veoma profesionalan tim.
+        Auto je bio gotov isti dan."
       </p>
+
+      <h4>— Marko Petrović</h4>
+
     </div>
+
+    <div
+      class="testimonial-card"
+      data-aos="zoom-in"
+      data-aos-delay="150"
+    >
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <p>
+        "Najbolji servis u Novom Sadu.
+        Dijagnostika rešena za 20 minuta."
+      </p>
+
+      <h4>— Nikola Ilić</h4>
+
+    </div>
+
+    <div
+      class="testimonial-card"
+      data-aos="zoom-in"
+      data-aos-delay="300"
+    >
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <p>
+        "Odlične cene i veoma ljubazni majstori."
+      </p>
+
+      <h4>— Stefan Jovanović</h4>
+
+    </div>
+
   </div>
-  <div id="errorMessages"></div>
 
 </section>
 
-<button onclick="topFunction()" id="topBtn" title="Nazad na vrh">⬆</button>
+<!-- FAQ -->
+<section class="faq">
 
-<!-- End smartphone / tablet look -->
-</div>
-<footer>
-  <p>Adresa: Joakim Jovica br.1 Novi Sad</p>
-  <p>tel: 064 654 56 89</p>
-  <p>&copy; 2026 AutoFix NS - Sva prava zadržana</p>
+  <h2 data-aos="fade-up">
+    Često postavljena pitanja
+  </h2>
+
+  <div class="faq-item" data-aos="fade-up">
+    <button class="faq-question">
+      Koliko traje mali servis?
+    </button>
+
+    <div class="faq-answer">
+      Mali servis uglavnom traje 1-2 sata.
+    </div>
+  </div>
+
+  <div class="faq-item" data-aos="fade-up">
+    <button class="faq-question">
+      Da li radite kompjutersku dijagnostiku?
+    </button>
+
+    <div class="faq-answer">
+      Da, koristimo modernu dijagnostičku opremu.
+    </div>
+  </div>
+
+  <div class="faq-item" data-aos="fade-up">
+    <button class="faq-question">
+      Da li je potrebno zakazivanje?
+    </button>
+
+    <div class="faq-answer">
+      Preporučujemo zakazivanje zbog brže usluge.
+    </div>
+  </div>
+
+</section>
+
+<!-- WHATSAPP BUTTON -->
+
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+
+      <h2>Naše usluge</h2>
+
+      <div class="cards">
+       
+        <div class="card">
+          <h3>Mali servis</h3>
+          <p>Zamena ulja i filtera</p>
+        </div>
+
+        <div class="card">
+          <h3>Dijagnostika</h3>
+          <p>Provera svih sistema</p>
+        </div>
+
+        <div class="card">
+          <h3>Veliki servis</h3>
+          <p>Kompletno održavanje</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+  <h2 data-aos="fade-up">
+    Zašto baš AutoFix NS?
+  </h2>
+
+  <div class="about-features">
+
+    <div class="feature" data-aos="fade-up">
+      <i class="fa fa-wrench"></i>
+      <h3>10+ godina iskustva</h3>
+      <p>
+        Dugogodišnje iskustvo i profesionalan pristup svakom vozilu.
+      </p>
+    </div>
+
+    <div class="feature" data-aos="fade-up" data-aos-delay="150">
+      <i class="fa fa-clock-o"></i>
+      <h3>Brza usluga</h3>
+      <p>
+        Efikasna dijagnostika i brzo rešavanje problema.
+      </p>
+    </div>
+
+    <div class="feature" data-aos="fade-up" data-aos-delay="300">
+      <i class="fa fa-shield"></i>
+      <h3>Garancija kvaliteta</h3>
+      <p>
+        Koristimo proverene delove i garantujemo kvalitet rada.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+      <div class="contact-container">
+
+        <!-- FORM -->
+        <div class="contact-card contact-form">
+
+          <h2>Kontaktiraj nas</h2>
+
+          <form id="contact-form">
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Vaše ime"
+            >
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email adresa"
+            >
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Unesite vaš problem ovde..."
+            ></textarea>
+
+            <button type="submit">
+              📅 Zakaži termin
+            </button>
+
+            <div id="errorMessages"></div>
+
+          </form>
+
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-card contact-info">
+
+          <h2>Nađite nas</h2>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Adresa: Joakim Jovica br.1, Novi Sad
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            Email:
+            <a href="mailto:info@autofixns.rs">
+              info@autofixns.rs
+            </a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            Telefon:
+            <a href="tel:0646545689">
+              064 654 56 89
+            </a>
+          </p>
+
+          <p>
+            <strong>Pozovite nas danas!</strong>
+          </p>
+
+          <button onclick="window.location.href='tel:0646545689'">
+            📞 Pozovi odmah
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+
+      <div class="item">
+        <img src="images/1.png" alt="Zamena ulja">
+        <div class="overlay">Zamena ulja</div>
+      </div>
+
+      <div class="item">
+        <img src="images/2.png" alt="Mali servis">
+        <div class="overlay">Mali servis</div>
+      </div>
+
+      <div class="item">
+        <img src="images/5.png" alt="Veliki servis">
+        <div class="overlay">Veliki servis</div>
+      </div>
+
+      <div class="item wide">
+        <img src="images/6.png" alt="Dijagnostika">
+        <div class="overlay">Dijagnostika</div>
+      </div>
+
+      <div class="item">
+        <img src="images/4.png" alt="Održavanje motora">
+        <div class="overlay">Održavanje motora</div>
+      </div>
+
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <img id="lightbox-img" alt="Galerija">
+    </div>
+
+  </main>
+
+ <footer class="footer">
+
+  <div class="footer-glow"></div>
+
+  <div class="footer-container">
+
+    <!-- LOGO + OPIS -->
+    <div class="footer-box">
+
+      <h2 class="footer-logo">
+        AutoFix NS
+      </h2>
+
+      <p>
+        Profesionalni servis i održavanje vozila
+        u Novom Sadu uz garantovan kvalitet
+        i dugogodišnje iskustvo.
+      </p>
+
+      <div class="footer-socials">
+
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- LINKOVI -->
+    <div class="footer-box">
+
+      <h3>Brzi linkovi</h3>
+
+      <a href="#services">Usluge</a>
+      <a href="#about">O nama</a>
+      <a href="#gallery">Galerija</a>
+      <a href="#contact">Kontakt</a>
+
+    </div>
+
+    <!-- KONTAKT -->
+    <div class="footer-box">
+
+      <h3>Kontakt</h3>
+
+      <p>
+        <i class="fa fa-map-marker"></i>
+        Joakim Jovica br.1, Novi Sad
+      </p>
+
+      <p>
+        <i class="fa fa-phone"></i>
+        064 654 56 89
+      </p>
+
+      <p>
+        <i class="fa fa-envelope"></i>
+        info@autofixns.rs
+      </p>
+
+    </div>
+
+    <!-- MAPA -->
+    <div class="footer-box">
+
+      <h3>Lokacija</h3>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.123456789!2d19.842!3d43.858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758abcdef12345%3A0x9876543210abcdef!2sAutoFix%20NS!5e0!3m2!1ssr!2srs!4v1681234567890!5m2!1ssr!2srs"
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 AutoFix NS — Sva prava zadržana
+    </p>
+
+  </div>
+
 </footer>
+  <a
+  href="https://wa.me/381646545689"
+  class="whatsapp-btn"
+  target="_blank"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
   <script src="script.js"></script>
+
 </body>
 
 </html>
